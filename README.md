@@ -48,10 +48,7 @@ kubectl get svc
 minikube service nginx-service
 ```
 
-
-
 #### If you want to destroy the pods:
-
 
 ##### Delete pod selected
 

@@ -15,11 +15,10 @@ kubectl apply -f persistent-volume.yaml
 kubectl get peristentvolumeclaim
 ```
 
-
 #### Generating key secret
 
 ```sh
-kubectl create secret generic mysql-pass --from-literal=password='a1s2d3f4'
+kubectl create secret generic mysql-pass --from-literal=password='@hs@hs@hs0uzA'
 ```
 
 #### Verify secret
@@ -32,4 +31,29 @@ kubectl get secrets
 
 ```sh
 kubectl get pods
+```
+
+### Applying service to MySQL Server
+
+```sh
+kubectl apply -f service.yaml
+```
+#### Verify services
+
+```sh
+kubectl get svc
+```
+##### Running pod interactive:
+
+```sh
+kubectl exec -it <name_pode> bash
+```
+
+
+#### If you want to destroy the volume persistent:
+
+##### Delete volume persistent with:
+
+```sh
+kubectl delete peristentvolumeclaim mysql-pv-claim
 ```

@@ -10,13 +10,13 @@ spec:
   selector:
     matchLabels:
       app: mysql-server
-      svc: db
+      tier: db
   # POD
   template:
     metada:
       labels:
         app: mysql-server
-        svc: db
+        tier: db
     # SPEC do POD    
     spec:
       # Containers
