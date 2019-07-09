@@ -1,56 +1,66 @@
-### Running file pod
+# Orquestration containers with Kubernets
+
+![alt text](https://cdn-images-1.medium.com/max/1200/1*A-kYNXMDiSLXde-ilVNJvg.png)
+
+
+### Climbing pods
+
+#### Applying ConfigMap
 
 ```sh
-kubectl apply -f pod.yaml
+kubectl apply -f configmap.yaml
 ```
 
-#### Show pods
+#### Verify with:
+
+```sh
+kubectl get configmaps
+```
+
+#### Applying Deployment
+
+```sh
+kubectl apply -f deployment.yaml
+```
+#### Veirfy Deployment:
 
 ```sh
 kubectl get pods
 ```
 
 
-#### Creting deployment from pods
-```sh
-kubectl create deployment nginx-pod --image=nginx:1.17-alpine
-```
-
-
-#### Creting a service to access pods
-```sh
-kubectl expose deployment nginx-pod --type=LoadBalancer --port=80
-```
-
-#### Show services
-```sh
-kubectl get services
-```
-
-#### Simulating service with minikube
-```sh
-minikube service nginx-pod
-```
-
-#### Deleting deployment
-```sh
-kubectl delete deployments --all
-```
-
-### Creating and running file deployment
-
-```sh
-kubectl apply -f deployment.yaml
-```
-
-### Up services
+#### Applying services
 
 ```sh
 kubectl apply -f service.yaml
 ```
 
-### Show services
+
+#### Show services
+
+```sh
+kubectl get svc
+```
+
+#### Simulating service with minikube
 
 ```sh
 minikube service nginx-service
+```
+
+
+
+#### If you want to destroy the pods:
+
+
+##### Delete pod selected
+
+```sh
+kubectl delete deployment ahsouza-nginx
+```
+
+##### Delete All
+
+```sh
+kubectl delete deployments --all
 ```
