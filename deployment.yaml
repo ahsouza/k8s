@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ahsouza-nginx
 
-### 3 MAX PODS
+### 3 MAX PODS to Templates
 spec:
   replicas: 3
   template:
