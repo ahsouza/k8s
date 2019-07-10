@@ -67,7 +67,7 @@ kubectl delete deployments --all
 ![alt text](https://cdn-images-1.medium.com/max/1200/1*_saMmI_5Kse6rqZPkiekfg.png)
 
 ### Deploying resources
-
+#### After connecting the cluster to GCP
 
 ConfigMap NGINX
 
@@ -84,5 +84,15 @@ kubectl apply -f deployment.yaml
 Applying service LoadBalancer
 
 ```sh
+kubectl apply -f service.yaml
+```
+
+Applying volume persistent, service and deployment of MySQL
+
+```sh
+cd mysql
+kubectl apply -f persistent-volume.yaml
+kubectl create secret generic mysql-pass --from-literal=password='@hs@hs@hs0uzA'
+kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 ```
