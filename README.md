@@ -61,3 +61,28 @@ kubectl delete deployment ahsouza-nginx
 ```sh
 kubectl delete deployments --all
 ```
+
+# Kubernetes no GCP
+
+![alt text](https://cdn-images-1.medium.com/max/1200/1*_saMmI_5Kse6rqZPkiekfg.png)
+
+### Deploying resources
+
+
+ConfigMap NGINX
+
+```sh
+kubectl apply -f configmap.yaml
+```
+
+Applying deployment NGINX
+
+```sh
+kubectl apply -f deployment.yaml
+```
+
+Applying service LoadBalancer
+
+```sh
+kubectl apply -f service.yaml
+```
